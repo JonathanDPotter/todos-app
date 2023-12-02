@@ -31,12 +31,12 @@ const Login = () => {
 
     try {
       register && (await api.user.registerUser({ username, password }));
-      const {token, user} = await api.user.login({ username, password });
+      const { token, user } = await api.user.login({ username, password });
       dispatch(setToken(token));
       dispatch(setUser(user));
       navigate("/");
-    } catch (error: any) {http://localhost:5173/about
-      setErrorMessage(error.message);
+    } catch (error: any) {
+      setErrorMessage("Username or Password are incorrect");
     }
   };
 

@@ -15,6 +15,7 @@ const App = () => {
           <Router />
         </main>
         <Footer />
+        {/* TODO: This isn't working right now. */}
         {alertMessage && (
           <Alert
             alertMessage={alertMessage}
