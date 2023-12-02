@@ -1,27 +1,11 @@
-# React + TypeScript + Vite
+# Todos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my final project for TrueCoders. It is a simple todo app that connects to a back end REST API with full CRUD functionality for both user profiles and todo items. The back end repo can be found [here](https://github.com/JonathanDPotter/todos-api).
 
-Currently, two official plugins are available:
+## Technologies used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This app is built using React, TypeScript, Redux, React-Router, Tailwindcss, and AutoAnimate.
 
-## Expanding the ESLint configuration
+## Functionality
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Upon first visiting the website a user is instructed to log in to view/create todo items. The user can register a new profile with a username and password or log in to an existing profile. Once logged in, a user can create, read, update and delete todos, update their username or delete their profile entirely.
