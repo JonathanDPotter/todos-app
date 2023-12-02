@@ -1,6 +1,4 @@
-import config from "../config";
-
-const { server_url } = config;
+import { server_url } from ".";
 
 interface UserInput {
   username: string;
