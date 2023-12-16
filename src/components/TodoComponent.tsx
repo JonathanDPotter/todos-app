@@ -76,7 +76,8 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
           <p
             className={`flex-1 ${todo.complete && "line-through decoration-2"}`}
           >
-            {todo.title && todo.complete ? (
+            {todo.title}
+            {todo.complete ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
