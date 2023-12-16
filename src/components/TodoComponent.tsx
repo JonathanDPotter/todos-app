@@ -74,11 +74,7 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
       ) : (
         <>
           <div className="flex-1 flex gap-2">
-            <p
-              className={`{
-                todo.complete && "line-through decoration-2"
-              }`}
-            >
+            <p className={todo.complete ? "line-through decoration-2" : ""}>
               {todo.title}
             </p>
             {todo.complete ? (
