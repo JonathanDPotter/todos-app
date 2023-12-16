@@ -89,7 +89,7 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M4.5 12.75l6 6 9-13.5"
+                  d="M4.5 12.75l6 6 9-13.5 inline"
                 />
               </svg>
             ) : null}
