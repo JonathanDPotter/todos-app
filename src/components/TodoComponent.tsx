@@ -47,7 +47,7 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
     <div
       ref={divRef}
       key={todo.id}
-      className={`flex gap-4 border-2 border-black p-4 rounded w-[75%] z-10 relative ${
+      className={`flex gap-4 border-2 border-black p-4 rounded w-[75%] z-10 ${
         expanded ? "expanded" : "clamped"
       }`}
     >
@@ -73,6 +73,11 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
         </form>
       ) : (
         <>
+          <p
+            className={`flex-1 ${todo.complete && "line-through decoration-2"}`}
+          >
+            {todo.title}
+          </p>
           {todo.complete ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +85,7 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 absolute l-4"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
@@ -89,11 +94,6 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
               />
             </svg>
           ) : null}
-          <p
-            className={`flex-1 ${todo.complete && "line-through decoration-2"}`}
-          >
-            {todo.title}
-          </p>
           <p
             className={`max-w-[30%] text-sm leading-6${
               !expanded ? " truncate" : " overflow-hidden"
