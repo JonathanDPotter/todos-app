@@ -10,7 +10,9 @@ export enum ModalType {
 const Profile = () => {
   const { user } = useAppSelector((store) => store.auth);
 
-  const buttonClassNames = "border-2 border-black rounded focus:ring-2 p-2";
+  const classNames = {
+    button: "border-2 border-black rounded focus:ring-2 p-2",
+  };
 
   const usernameDialogRef = useRef<HTMLDialogElement>(null);
   const deleteDialogRef = useRef<HTMLDialogElement>(null);
@@ -20,14 +22,14 @@ const Profile = () => {
       <h2>Username: {user?.username}</h2>
       <button
         type="button"
-        className={buttonClassNames}
+        className={classNames.button}
         onClick={() => usernameDialogRef.current?.showModal()}
       >
         update username
       </button>
       <button
         type="button"
-        className={buttonClassNames}
+        className={classNames.button}
         onClick={() => deleteDialogRef.current?.showModal()}
       >
         delete profile

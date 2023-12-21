@@ -35,7 +35,10 @@ const AddTodoModal: FC<Props> = ({ dialogRef }) => {
     }
   };
 
-  const inputStyles = "border-2 border-black p-2 rounded focus:ring-2";
+  const classNames = {
+    input: "border-2 border-black p-2 rounded focus:ring-2",
+    fieldset: "flex justify-between items-center",
+  };
 
   return (
     <dialog
@@ -48,35 +51,35 @@ const AddTodoModal: FC<Props> = ({ dialogRef }) => {
           onSubmit={(event) => handleSubmit(event)}
           className="flex flex-col gap-4"
         >
-          <fieldset className="flex justify-between items-center">
+          <fieldset className={classNames.fieldset}>
             <label htmlFor="title">Title</label>
             <input
               id="title"
               type="text"
               value={title}
               onChange={(event) => setTitle(event.currentTarget.value)}
-              className={inputStyles}
+              className={classNames.input}
             />
           </fieldset>
-          <fieldset className="flex justify-between items-center">
+          <fieldset className={classNames.fieldset}>
             <label htmlFor="description">Description</label>
             <input
               id="description"
               type="text"
               value={description}
               onChange={(event) => setDescription(event.currentTarget.value)}
-              className={inputStyles}
+              className={classNames.input}
             />
           </fieldset>
           <div className="self-end flex gap-4">
             <button
               type="button"
-              className={inputStyles}
+              className={classNames.input}
               onClick={() => dialogRef.current?.close()}
             >
               Cancel
             </button>
-            <input type="submit" className={inputStyles} value="Submit" />
+            <input type="submit" className={classNames.input} value="Submit" />
           </div>
         </form>
       </div>

@@ -22,6 +22,8 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
 
   const divRef = useRef<HTMLDivElement>(null);
 
+  const classNames = { input: "border-black border-2 rounded p-2" };
+
   const updateComplete = async (todo: Todo) => {
     const update = { ...todo, complete: !todo.complete };
     // @ts-ignore
@@ -58,16 +60,16 @@ const TodoComopnent: FC<Props> = ({ todo, expand, expanded }) => {
             aria-label="title"
             value={title}
             onChange={(event) => setTitle(event.currentTarget.value)}
-            className="border-black border-2 rounded p-2"
+            className={classNames.input}
           />
           <input
             type="text"
             aria-label="description"
             value={description}
             onChange={(event) => setDescription(event.currentTarget.value)}
-            className="border-black border-2 rounded p-2"
+            className={classNames.input}
           />
-          <button type="submit" className="border-black border-2 rounded p-2">
+          <button type="submit" className={classNames.input}>
             Submit
           </button>
         </form>

@@ -17,8 +17,10 @@ const Login = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const fieldsetClassName = "flex justify-between items-center";
-  const inputClassName = "border-2 border-black rounded focus:ring-2 p-2";
+  const classNames = {
+    fieldset: "flex justify-between items-center",
+    input: "border-2 border-black rounded focus:ring-2 p-2",
+  };
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -64,43 +66,43 @@ const Login = () => {
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 w-3/4 max-w-md mx-auto"
       >
-        <fieldset className={fieldsetClassName}>
+        <fieldset className={classNames.fieldset}>
           <label htmlFor="username">Username: </label>
           <input
             type="text"
             id="username"
-            className={inputClassName}
+            className={classNames.input}
             value={username}
             onChange={(event) => setUsername(event.currentTarget.value)}
           />
         </fieldset>
-        <fieldset className={fieldsetClassName}>
+        <fieldset className={classNames.fieldset}>
           <label htmlFor="password">Password: </label>
           <input
             type="password"
             id="password"
-            className={inputClassName}
+            className={classNames.input}
             value={password}
             onChange={(event) => setPassword(event.currentTarget.value)}
           />
         </fieldset>
         {register ? (
-          <fieldset className={fieldsetClassName}>
+          <fieldset className={classNames.fieldset}>
             <label htmlFor="repeat-password">Repeat Password: </label>
             <input
               type="password"
               id="repeat-password"
-              className={inputClassName}
+              className={classNames.input}
               value={repeatPassword}
               onChange={(event) => setRepeatPassword(event.currentTarget.value)}
             />
           </fieldset>
         ) : null}
-        <button type="submit" className={inputClassName + " self-end"}>
+        <button type="submit" className={classNames.input + " self-end"}>
           Submit
         </button>
         <fieldset
-          className={fieldsetClassName.replace("justify-between ", "gap-4 ")}
+          className={classNames.fieldset.replace("justify-between ", "gap-4 ")}
         >
           <label htmlFor="register" className="text-xs">
             {register ? "Registering" : "Need to Register?"}
