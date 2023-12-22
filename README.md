@@ -2,7 +2,7 @@
 
 This is my final project for TrueCoders. It is a simple todo app that connects to a back end REST API with full CRUD functionality for both user profiles and todo items. The back end repo can be found [here](https://github.com/JonathanDPotter/todos-api).
 
-To run this app locally, you will need to provide a .env file with the address of the api. If you aren't running a local copy of the api you can use the hosted version which is: https://jp-todos-api-22f1a0f56308.herokuapp.com
+To run this app locally, you will need to provide a .env file with the address of the api as VITE_SERVER_URL. If you aren't running a local copy of the api you can use the hosted version which is: https://jp-todos-api-22f1a0f56308.herokuapp.com
 
 ## Technologies used
 
